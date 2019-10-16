@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.hyte.h2</groupId>
+		<artifactId>h2-validate</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>h2-14199</artifactId>
+	<name>H2 :: Validate :: v1.4.199</name>
+	<properties>
+		<h2.version>1.4.199</h2.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>io.hyte.h2</groupId>
+			<artifactId>h2-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>
+
