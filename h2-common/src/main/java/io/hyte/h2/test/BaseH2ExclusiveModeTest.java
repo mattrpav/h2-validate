@@ -19,45 +19,47 @@ public abstract class BaseH2ExclusiveModeTest {
 	@Test
 	public void testSetExclusiveGetExclusive() throws SQLException {
 
-		Connection connection = DriverManager.getConnection("jdbc:h2:file:./target/exclusivedb", "sa", "");
+		try(Connection connection = DriverManager.getConnection("jdbc:h2:file:./target/exclusivedb", "sa", "")) {
 		
-		assertFalse(getExclusiveMode(connection));
+			assertFalse(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 1);
-		assertTrue(getExclusiveMode(connection));
+			setExclusiveMode(connection, 1);
+			assertTrue(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 0);
-		assertFalse(getExclusiveMode(connection));
+			setExclusiveMode(connection, 0);
+			assertFalse(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 2);
-		assertTrue(getExclusiveMode(connection));
+			setExclusiveMode(connection, 2);
+			assertTrue(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 0);
-		assertFalse(getExclusiveMode(connection));
+			setExclusiveMode(connection, 0);
+			assertFalse(getExclusiveMode(connection));
+		}
 	}
 	
 	@Test
 	public void testSetExclusiveGetExclusiveFails14200() throws SQLException {
 
-		Connection connection = DriverManager.getConnection("jdbc:h2:file:./target/exclusivedb", "sa", "");
+		try(Connection connection = DriverManager.getConnection("jdbc:h2:file:./target/exclusivedb", "sa", "")) {
 		
-		assertFalse(getExclusiveMode(connection));
+			assertFalse(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 1);
-		assertTrue(getExclusiveMode(connection));
+			setExclusiveMode(connection, 1);
+			assertTrue(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 0);
-		assertFalse(getExclusiveMode(connection));
+			setExclusiveMode(connection, 0);
+			assertFalse(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 1);
-		assertTrue(getExclusiveMode(connection));
+			setExclusiveMode(connection, 1);
+			assertTrue(getExclusiveMode(connection));
 		
-		// Setting to more aggressive exclusive mode throws exception in 1.4.200, but not 1.4.199
-		setExclusiveMode(connection, 2);
-		assertTrue(getExclusiveMode(connection));
+			// Setting to more aggressive exclusive mode throws exception in 1.4.200, but not 1.4.199
+			setExclusiveMode(connection, 2);
+			assertTrue(getExclusiveMode(connection));
 		
-		setExclusiveMode(connection, 0);
-		assertFalse(getExclusiveMode(connection));
+			setExclusiveMode(connection, 0);
+			assertFalse(getExclusiveMode(connection));
+		}
 	}
 	
 	
