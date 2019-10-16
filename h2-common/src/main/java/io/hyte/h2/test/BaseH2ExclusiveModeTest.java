@@ -52,7 +52,7 @@ public abstract class BaseH2ExclusiveModeTest {
 		setExclusiveMode(connection, 1);
 		assertTrue(getExclusiveMode(connection));
 		
-		// Setting to existing mode throws exception
+		// Setting to more aggressive exclusive mode throws exception in 1.4.200, but not 1.4.199
 		setExclusiveMode(connection, 2);
 		assertTrue(getExclusiveMode(connection));
 		
