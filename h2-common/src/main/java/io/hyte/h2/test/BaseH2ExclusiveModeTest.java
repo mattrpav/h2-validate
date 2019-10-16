@@ -49,10 +49,10 @@ public abstract class BaseH2ExclusiveModeTest {
 		setExclusiveMode(connection, 0);
 		assertFalse(getExclusiveMode(connection));
 		
-		// Setting to existing mode throws exception
-		setExclusiveMode(connection, 0);
-		assertFalse(getExclusiveMode(connection));
+		setExclusiveMode(connection, 1);
+		assertTrue(getExclusiveMode(connection));
 		
+		// Setting to existing mode throws exception
 		setExclusiveMode(connection, 2);
 		assertTrue(getExclusiveMode(connection));
 		
