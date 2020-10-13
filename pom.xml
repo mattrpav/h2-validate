@@ -9,7 +9,7 @@
 	<packaging>pom</packaging>
 	<properties>
 		<h2.version>1.4.200</h2.version>
-		<junit4.version>4.11</junit4.version>
+		<junit4.version>4.13.1</junit4.version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 	</properties>
 	<dependencies>
