@@ -41,5 +41,6 @@
 		<module>h2-common</module>
 		<module>h2-14199</module>
 		<module>h2-14200</module>
+		<module>h2-20206</module>
 	</modules>
 </project>
